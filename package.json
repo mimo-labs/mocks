@@ -1,0 +1,18 @@
+{
+  "name": "mocks",
+  "version": "0.0.1",
+  "description": "A user friendly and highly interactive API mocking service",
+  "main": "index.ts",
+  "repository": "https://github.com/mimo-labs/mocks",
+  "author": "Mimo Labs",
+  "license": "MIT",
+  "private": false,
+
+  "workspaces": [
+    "packages/*"
+  ],
+
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
