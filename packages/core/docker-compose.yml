@@ -1,0 +1,23 @@
+---
+version: "3"
+
+services:
+  core:
+    build: .
+    restart: always
+    ports:
+      - 8000:8000
+    environment:
+      - DEBUG=${DEBUG:-true}
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:12
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=mocks
+      - POSTGRES_USER=mimo
+      - POSTGRES_PASSWORD=asd123
