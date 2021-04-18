@@ -26,6 +26,7 @@ COPY --from=builder /usr/src/app/dist/ /usr/src/app/dist/
 RUN chown -R node: /usr/src/app
 
 USER node
+RUN yarn global add @nestjs/cli
 
 RUN yarn install --frozen-lockfile
 
