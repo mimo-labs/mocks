@@ -1,8 +1,8 @@
 {
    "type": "postgres",
-   "host": "localhost",
+   "host": "postgres",
    "port": 5432,
-   "username": "blanc",
+   "username": "mimo",
    "password": "asd123",
-   "database": "blanc"
+   "database": "mocks"
 }
