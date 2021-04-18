@@ -18,11 +18,14 @@ FROM node:14-alpine
 
 ENV NODE_ENV production
 
-USER node
 WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app/package*.json /usr/src/app/
 COPY --from=builder /usr/src/app/dist/ /usr/src/app/dist/
+
+RUN chown -R node: /usr/src/app
+
+USER node
 
 RUN yarn install --frozen-lockfile
 
