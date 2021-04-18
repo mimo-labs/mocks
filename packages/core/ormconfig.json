@@ -4,5 +4,6 @@
    "port": 5432,
    "username": "mimo",
    "password": "asd123",
-   "database": "mocks"
+   "database": "mocks",
+   "synchronize": true
 }

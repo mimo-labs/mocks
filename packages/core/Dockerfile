@@ -16,11 +16,13 @@ RUN yarn install --frozen-lockfile && \
 
 FROM node:14-alpine
 
-ENV NODE_ENV production
+# ENV NODE_ENV production
 
 WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app/package*.json /usr/src/app/
+COPY --from=builder /usr/src/app/tsconfig*.json /usr/src/app/
+COPY --from=builder /usr/src/app/ormconfig.json /usr/src/app/
 COPY --from=builder /usr/src/app/dist/ /usr/src/app/dist/
 
 RUN chown -R node: /usr/src/app
