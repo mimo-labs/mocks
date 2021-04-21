@@ -3,7 +3,9 @@ version: "3"
 
 services:
   core:
-    build: .
+    build:
+      dockerfile: ./docker/Dockerfile.development
+      context: .
     restart: always
     command: yarn start:dev
     ports:
